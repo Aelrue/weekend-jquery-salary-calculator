@@ -6,10 +6,23 @@ $(document).ready(onReady);
 
 function onReady() {
   console.log("ready!");
-  $(".submit-button").on("click", addItem);
+  $(".submit-button").on("click", addEmployee);
 }
 
-function addItem() {
+function addEmployee() {
   console.log("Clicked!");
-  console.log($(this));
+
+  let employeeInfo = {
+    firstName: $("#firstIn").val(),
+    lastName: $("#lastIn").val(),
+    identifier: $("#identifierIn").val(),
+    title: $("#titleIn").val(),
+    annualSalary: $("#salaryIn").val(),
+  };
+
+  render();
+}
+
+function render() {
+  console.log("in render function");
 }
