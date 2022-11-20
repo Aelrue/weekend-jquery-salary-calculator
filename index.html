@@ -11,20 +11,33 @@
   </head>
   <body>
     <h1>Salary Calculator</h1>
+    <h2>Add Employee</h2>
     <input type="text" placeholder="First Name" id="firstIn" />
     <input type="text" placeholder="Last Name" id="lastIn" />
     <input type="text" placeholder="ID" id="identifierIn" />
     <input type="text" placeholder="Title" id="titleIn" />
-    <input type="text" placeholder="Annual Salary" id="salaryIn" />
-    <!-- <style>
-      table,
-      th,
-      td {
-        border: 1px solid black;
+    <input type="number" placeholder="Annual Salary" id="salaryIn" />
+    <button id="submitEmployeeButton">Submit</button>
+
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
       }
     </style>
-  </head>
-  <body>
+
     <h1>Employees</h1>
 
     <table>
@@ -38,21 +51,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>January</td>
-          <td>$100</td>
-        </tr>
-        <tr>
-          <td>February</td>
-          <td>$80</td>
-        </tr>
+        <tr></tr>
+        <tr></tr>
       </tbody>
       <tfoot>
-        <tr>
-          <td>Sum</td>
-          <td>$180</td>
-        </tr>
+        <tr></tr>
       </tfoot>
-    </table> -->
+    </table>
+    <h3>Monthly Cost Total: $<span id="costOut">COSTNUMBER</span></h3>
   </body>
 </html>
