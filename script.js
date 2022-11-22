@@ -1,3 +1,4 @@
+// empty array for employee information
 let employees = [];
 
 console.log("script sourced");
@@ -7,6 +8,7 @@ $(document).ready(onReady);
 function onReady() {
   console.log("ready!");
   $("#submitEmployeeButton").on("click", addEmployee);
+  $(".delete").on("click", deleteEmployee);
 }
 
 function addEmployee() {
@@ -26,7 +28,21 @@ function addEmployee() {
   $("#identifierIn").val("");
   $("#titleIn").val("");
   $("#salaryIn").val("");
-  render();
+
+  $("#employee-table").empty();
+  for (employee of employees) {
+    $("#employee-table").append(`
+    <tr>
+      <td>${employee.firstName}</td>
+      <td>${employee.lastName}</td>
+      <td>${employee.identifier}</td>
+      <td>${employee.title}</td>
+      <td>${employee.annualSalary}</td>
+      <th><button id="delete-button">Delete</button></th>
+    </tr>`);
+  }
+
+  console.log(employees);
   calculateRemainingBudget();
 }
 
@@ -46,6 +62,7 @@ function calculateRemainingBudget() {
   }
 }
 
-function render() {
-  console.log("in render function");
+function deleteEmployee() {
+  console.log("Deleted!");
+  $(this).parent().parent().empty();
 }
